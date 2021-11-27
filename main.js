@@ -55,7 +55,7 @@ function my_keydown(e)
 	And id coordinates matches them remove ball image, 
 	display "GAME OVER!!!" 
 	and make canvas border 'red'. */
-	if((ball_x==ball_y)&&(hole_x==hole_y)){
+	if((ball_x==hole_x)&&(ball_y==hole_y)){
 		canvas.remove(ball_obj);
 		document.getElementById("hd3").innerHTML="You have Hit theGoal!!!";
 		document.getElementById("myCanvas").style.borderColor="red";
@@ -112,13 +112,13 @@ function my_keydown(e)
 		if(ball_x >=0)
 		{
 			// Write a code to move ball left side.
-			if(ball_x>=450){
-				ball_x=ball_x + block_image_width;
+			
+				ball_x=ball_x - block_image_width;
 				console.log("block image width =" + block_image_width);
 				console.log("When left arrow key is pressed, X = " +ball_x + ",Y" + ball_y);
 				canvas.remove(ball_obj);
 				new_image();
-			}
+			
 		}
 	}
 
@@ -127,13 +127,13 @@ function my_keydown(e)
 		if(ball_x <=1050)
 		{
 			// Write a code to move ball right side.
-			if(ball_x>=0){
+			
 				ball_x=ball_x + block_image_width;
 				console.log("block image width =" + block_image_width);
 				console.log("When left arrow key is pressed, X = " +ball_x + ",Y" + ball_y);
 				canvas.remove(ball_obj);
 				new_image();
-			}
+			
 		}
 	}
 	
